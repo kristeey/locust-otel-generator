@@ -1,0 +1,37 @@
+{
+  "resourceMetrics": [
+    {
+      "resource": {
+        "attributes": [{"key": "service.name", "value": {"stringValue": "locust-otel-generator.service"}}]
+      },
+      "scopeMetrics": [
+        {
+          "scope": {
+            "name": "locust-otel-generator.metrics",
+            "version": "0.0.1-alpha",
+            "attributes": [{"key": "service.name", "value": {"stringValue": "locust-otel-generator.service"}}]
+          },
+          "metrics": [
+            {
+              "name": "dummy.counter",
+              "unit": "1",
+              "description": "I am a Counter",
+              "sum": {
+                "aggregationTemporality": 1,
+                "isMonotonic": true,
+                "dataPoints": [
+                  {
+                    "asDouble": 5,
+                    "startTimeUnixNano": "1544712660300000000",
+                    "timeUnixNano": "1544712660300000000",
+                    "attributes": [{"key": "service.name","value": {"stringValue": "locust-otel-generator.service"}}]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

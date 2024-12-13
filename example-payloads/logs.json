@@ -1,0 +1,32 @@
+{
+  "resourceLogs": [
+    {
+      "resource": {
+        "attributes": [{"key": "service.name", "value": {"stringValue": "locust-otel-generator.service"}}]
+      },
+      "scopeLogs": [
+        {
+          "scope": {
+            "name": "locust-otel-generator.metrics",
+            "version": "0.0.1-alpha",
+            "attributes": [{"key": "service.name", "value": {"stringValue": "locust-otel-generator.service"}}]
+          },
+          "logRecords": [
+            {
+              "timeUnixNano": "1544712660300000000",
+              "observedTimeUnixNano": "1544712660300000000",
+              "severityNumber": 10,
+              "severityText": "Information",
+              "traceId": "5B8EFFF798038103D269B633813FC60C",
+              "spanId": "EEE19B7EC3C1B174",
+              "body": {
+                "stringValue": "Example log record"
+              },
+              "attributes": [{"key": "service.name","value": {"stringValue": "locust-otel-generator.service"}}]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
