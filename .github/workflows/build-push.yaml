@@ -14,10 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     # Sets the permissions granted to the `GITHUB_TOKEN` for the actions in this job.
     permissions:
-      contents: read
-      packages: write
-      attestations: write
-      id-token: write
+      contents: write     # Required to create release
+      packages: write     # Required to publish to GitHub Container Registry
+      attestations: write # Required to create artifact attestation
+      id-token: write     # Required to log in to the Container registry
       #
     steps:
       - name: Checkout repository
