@@ -3,8 +3,6 @@ import json, os
 
 headers = {"Content-Type": "application/json"}
 
-print("Sending telemetry to endpoint: ", self.client.base_url)
-
 class GeneratorBehavior(TaskSet):
     def on_start(self):
       self.env_enable_logs = os.getenv("ENABLE_LOGS", "false").lower() == "true"
