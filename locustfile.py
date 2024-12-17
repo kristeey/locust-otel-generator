@@ -3,6 +3,8 @@ import json, os
 
 headers = {"Content-Type": "application/json"}
 
+print("Sending telemetry to endpoint: ", self.client.base_url)
+
 class GeneratorBehavior(TaskSet):
     def on_start(self):
       self.env_enable_logs = os.getenv("ENABLE_LOGS", "false").lower() == "true"
@@ -10,7 +12,6 @@ class GeneratorBehavior(TaskSet):
       self.env_print_status_code = os.getenv("PRINT_STATUS_CODE", "false").lower() == "true"
       self.env_logs_payload = os.getenv("LOGS_PAYLOAD", None)
       self.env_metric_payload = os.getenv("METRIC_PAYLOAD", None)
-      print("Sending telemetry to endpoint: ", self.client.base_url)
 
     @task(1)
     def send_telemetry(self):
@@ -39,3 +40,5 @@ class GeneratorBehavior(TaskSet):
 class OtelUser(HttpUser):
     tasks = [GeneratorBehavior]
     wait_time = constant_throughput(1)
+    def on_start(self):
+      print("Sending telemetry to endpoint: ", self.client.base_url)
