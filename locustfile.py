@@ -1,7 +1,15 @@
-from locust import HttpUser, TaskSet, task, constant_throughput
+from locust import HttpUser, TaskSet, task, constant_throughput, events
 import json, os
 
 headers = {"Content-Type": "application/json"}
+
+
+# On test start
+@events.test_start.add_listener
+def on_test_start(environment, **kwargs):
+    print("\n" + "*" * 150)
+    print("\n Load testing against " + environment.host + " started.\n" )
+    print("*" * 150 + "\n")
 
 class GeneratorBehavior(TaskSet):
     def on_start(self):
@@ -38,5 +46,3 @@ class GeneratorBehavior(TaskSet):
 class OtelUser(HttpUser):
     tasks = [GeneratorBehavior]
     wait_time = constant_throughput(1)
-    def on_start(self):
-      print("Sending telemetry to endpoint: ", self.client.base_url)
