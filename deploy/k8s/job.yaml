@@ -1,0 +1,35 @@
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: locust-otel-generator
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: locust-otel-generator
+          image: ghcr.io/kristeey/locust-otel-generator:latest
+          env:
+            - name: ENABLE_METRICS
+              value: "true"
+            - name: ENABLE_LOGS
+              value: "true"
+            - name: LOCUST_HOST
+              value: "http://some.host.com"
+            - name: LOCUST_USERS
+              value: "5000"
+            - name: LOCUST_SPAWN_RATE
+              value: "10"
+            - name: LOCUST_RUN_TIME
+              value: "10m"
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 100m
+              memory: 128Mi
+  # Number of pods to run in parallel. Change to fit your needs.
+  parallelism: 2
+  backoffLimit: 3
