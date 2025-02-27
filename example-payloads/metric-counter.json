@@ -17,13 +17,13 @@
               "unit": "1",
               "description": "I am a Counter",
               "sum": {
-                "aggregationTemporality": 1,
+                "aggregationTemporality": 2,
                 "isMonotonic": true,
                 "dataPoints": [
                   {
                     "asDouble": 5,
-                    "startTimeUnixNano": "1544712660300000000",
-                    "timeUnixNano": "1544712660300000000",
+                    "startTimeUnixNano": "1740661140000000000",
+                    "timeUnixNano": "1740661140000000000",
                     "attributes": [{"key": "service.name","value": {"stringValue": "locust-otel-generator.service"}}]
                   }
                 ]
