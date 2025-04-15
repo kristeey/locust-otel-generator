@@ -22,8 +22,8 @@
                 "dataPoints": [
                   {
                     "asDouble": 5,
-                    "startTimeUnixNano": "1740661140000000000",
-                    "timeUnixNano": "1740661140000000000",
+                    "timeUnixNano": "1744704800000000000",
+                    "startTimeUnixNano": "1744704800000000000",
                     "attributes": [{"key": "service.name","value": {"stringValue": "locust-otel-generator.service"}}]
                   }
                 ]

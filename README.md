@@ -42,3 +42,9 @@ An example of how to deploy a k8s Job in k8s can be found in `deploy/k8s/job.yam
 ```
 kubectl apply -f deploy/k8s/job.yaml
 ```
+
+## Troubleshooting
+- Check if enpoint is responding correctly. Send a curl request directly with the metric payload
+```
+curl -X POST -H "Content-Type: application/json" -d @example-payloads/metric-counter.json -i https://MYURL/v1/metrics
+```
